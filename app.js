@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const authRoutes = require('./routes/auth');
+
 const app = express();
 
 app.use(express.json());
+
+app.use('/api/auth',authRoutes);
 
 const port = process.env.PORT;
 
